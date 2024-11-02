@@ -30,7 +30,7 @@ if __name__ == '__main__':
     
     blur_path = args.blur_path
     out_path = os.path.join('results', args.job_name, 'images')
-    weights_path = os.path.join('results', args.job_name, 'models', args.weight_name)
+    weights_path = args.weight_name
     
     # Create output directory if it doesn't exist
     if not os.path.isdir(out_path):
