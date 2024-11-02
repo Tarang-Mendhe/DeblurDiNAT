@@ -38,9 +38,12 @@ if __name__ == '__main__':
     
     # Load model
     model = get_generator(config['model'])
-    ck = torch.load(weights_path)
-    model.load_state_dict(ck)
+    ck = torch.load(weights_path, weights_only=True)
+    new_state_dict = {key.replace("module.", ""): val for key, val in ck.items()}
+    model.load_state_dict(new_state_dict)
+    
     model = model.cuda()
+
 
     test_time = 0
     iteration = 0
