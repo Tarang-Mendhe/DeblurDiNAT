@@ -25,7 +25,7 @@ if __name__ == '__main__':
     args = get_args()
     
     # Load configuration
-    with open(os.path.join('config', args.job_name, 'config_pretrained.yaml')) as cfg:
+    with open(os.path.join('config', args.job_name, 'config_custom_val.yaml')) as cfg:
         config = yaml.safe_load(cfg)
     
     blur_path = args.blur_path
